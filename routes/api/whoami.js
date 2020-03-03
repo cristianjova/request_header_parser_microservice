@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
     req.socket.remoteAddress ||
     req.connection.socket.remoteAddress;
   const data = {
-    ipaddress: ip,
+    ipaddress: ip.split(',')[0],
     language: req.headers['accept-language'].split(',')[0],
     software:
       software[1].slice(1) + ' ' + software[2] + ' ' + software[3].slice(0, -1)
